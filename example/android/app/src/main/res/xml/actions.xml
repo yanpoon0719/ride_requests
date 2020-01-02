@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<actions>
+    <action intentName="actions.intent.CREATE_TAXI_RESERVATION">
+        <fulfillment urlTemplate="hktaxi://book-a-ride?client_id=GOOGLE_ASSISTANT&amp;dropoff_formatted_address={?dropoff_formatted_address}&amp;dropoff_latitude={?dropoff_latitude}&amp;dropoff_longitude={?dropoff_longitude}&amp;dropoff_title={?dropoff_title}&amp;pickup_formatted_address={?pickup_formatted_address}&amp;pickup_latitude={?pickup_latitude}&amp;pickup_longitude={?pickup_longitude}&amp;pickup_title={?pickup_title}">
+            <parameter-mapping
+                intentParameter="taxiReservation.dropoffLocation.address"
+                urlParameter="dropoff_formatted_address" />
+            <parameter-mapping
+                intentParameter="taxiReservation.dropoffLocation.geo.latitude"
+                urlParameter="dropoff_latitude" />
+            <parameter-mapping
+                intentParameter="taxiReservation.dropoffLocation.geo.longitude"
+                urlParameter="dropoff_longitude" />
+            <parameter-mapping
+                intentParameter="taxiReservation.dropoffLocation.name"
+                urlParameter="dropoff_title" />
+            <parameter-mapping
+                intentParameter="taxiReservation.pickupLocation.address"
+                urlParameter="pickup_formatted_address" />
+            <parameter-mapping
+                intentParameter="taxiReservation.pickupLocation.geo.latitude"
+                urlParameter="pickup_latitude" />
+            <parameter-mapping
+                intentParameter="taxiReservation.pickupLocation.geo.longitude"
+                urlParameter="pickup_longitude" />
+            <parameter-mapping
+                intentParameter="taxiReservation.pickupLocation.name"
+                urlParameter="pickup_title" />
+        </fulfillment>
+    </action>
+</actions>
