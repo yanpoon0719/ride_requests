@@ -1,11 +1,12 @@
 name: ride_requests
 description: A new flutter plugin project.
-version: 0.0.1
+version: 0.0.2
 author:
 homepage:
 
 environment:
-  sdk: ">=2.1.0 <3.0.0"
+  sdk: ">=2.16.1 <3.0.0"
+  flutter: ">=1.17.0"
 
 dependencies:
   flutter:
@@ -13,6 +14,10 @@ dependencies:
 
 dev_dependencies:
   flutter_test:
+    sdk: flutter
+  integration_test:
+    sdk: flutter
+  flutter_driver:
     sdk: flutter
 
 # For information on the generic Dart part of this file, see the

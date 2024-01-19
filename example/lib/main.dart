@@ -13,8 +13,8 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  Ride _ride;
-  StreamSubscription _sub;
+  Ride? _ride;
+  StreamSubscription? _sub;
 
   @override
   void initState() {
@@ -25,7 +25,7 @@ class _MyAppState extends State<MyApp> {
   // Platform messages are asynchronous, so we initialize in an async method.
   Future<void> initPlatformState() async {
     // Platform messages may fail, so we use a try/catch PlatformException.
-    Ride ride;
+    Ride? ride;
     try {
       final res = await getRideRequest();
       ride = resToRide(res);
@@ -34,8 +34,8 @@ class _MyAppState extends State<MyApp> {
     }
 
     _sub?.cancel();
-    _sub = getRideRequestStream().listen((dynamic res) {
-      Ride ride = resToRide(res);
+    _sub = getRideRequestStream()?.listen((dynamic res) {
+      Ride? ride = resToRide(res);
       if (!mounted) return;
       setState(() {
         _ride = ride;
@@ -67,16 +67,16 @@ class _MyAppState extends State<MyApp> {
             : Column(
               children: <Widget>[
                 Text("Pickup:"),
-                Text(_ride.pickupFormattedAddress),
-                Text(_ride.pickupLatitude.toString()),
-                Text(_ride.pickupLongitude.toString()),
-                Text(_ride.pickupTitle),
+                Text(_ride?.pickupFormattedAddress?? "-"),
+                Text(_ride?.pickupLatitude != null? _ride!.pickupLatitude!.toString() : "-"),
+                Text(_ride?.pickupLongitude != null? _ride!.pickupLongitude!.toString() : "-"),
+                Text(_ride?.pickupTitle != null? _ride!.pickupTitle! : "-"),
                 Divider(),
                 Text("Dropoff:"),
-                Text(_ride.dropoffFormattedAddress),
-                Text(_ride.dropoffLatitude.toString()),
-                Text(_ride.dropoffLongitude.toString()),
-                Text(_ride.dropoffTitle),
+                Text(_ride?.dropoffFormattedAddress != null? _ride!.dropoffFormattedAddress! : "-"),
+                Text(_ride?.dropoffLatitude != null? _ride!.dropoffLatitude!.toString() : "-"),
+                Text(_ride?.dropoffLongitude != null? _ride!.dropoffLongitude!.toString() : "-"),
+                Text(_ride?.dropoffTitle != null? _ride!.dropoffTitle! : "-"),
               ],
             ),
         ),

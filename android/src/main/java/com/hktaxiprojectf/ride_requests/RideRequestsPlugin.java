@@ -63,7 +63,7 @@ public class RideRequestsPlugin implements MethodCallHandler, StreamHandler, Plu
     registrar.addNewIntentListener(instance);
   }
 
-  private RideRequestsPlugin(Registrar registrar) {
+  public RideRequestsPlugin(Registrar registrar) {
     this.registrar = registrar;
     handleIntent(registrar.context(), registrar.activity().getIntent(), true);
   }

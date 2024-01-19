@@ -8,7 +8,7 @@ class Ride {
   final double dropoffLongitude;
   final String dropoffTitle;
 
-  Ride({this.pickupFormattedAddress, this.pickupLatitude, this.pickupLongitude, this.pickupTitle, this.dropoffFormattedAddress, this.dropoffLatitude, this.dropoffLongitude, this.dropoffTitle});
+  Ride({required this.pickupFormattedAddress, required this.pickupLatitude, required this.pickupLongitude, required this.pickupTitle, required this.dropoffFormattedAddress, required this.dropoffLatitude, required this.dropoffLongitude, required this.dropoffTitle});
 
   factory Ride.fromJson(Map<String, dynamic> json) {
     return Ride(
