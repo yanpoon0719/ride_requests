@@ -5,8 +5,9 @@ import org.junit.Rule;
 import org.junit.runner.RunWith;
 
 import dev.flutter.plugins.integration_test.FlutterTestRunner;
-
 @RunWith(FlutterTestRunner.class)
-public class MainActivityTest {
-    @Rule public ActivityTestRule<MainActivity> rule = new ActivityTestRule<>(MainActivity.class);
+public class EmbeddingV1ActivityTest {
+    @Rule
+    public ActivityTestRule<EmbeddingV1Activity> rule =
+            new ActivityTestRule<>(EmbeddingV1Activity.class);
 }

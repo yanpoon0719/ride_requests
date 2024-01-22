@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shortcuts xmlns:android="http://schemas.android.com/apk/res/android">
+    <capability android:name="actions.intent.CREATE_TAXI_RESERVATION">
+        <fulfillment urlTemplate="hktaxi://book-a-ride?client_id=GOOGLE_ASSISTANT&amp;dropoff_formatted_address={?dropoff_formatted_address}&amp;dropoff_latitude={?dropoff_latitude}&amp;dropoff_longitude={?dropoff_longitude}&amp;dropoff_title={?dropoff_title}&amp;pickup_formatted_address={?pickup_formatted_address}&amp;pickup_latitude={?pickup_latitude}&amp;pickup_longitude={?pickup_longitude}&amp;pickup_title={?pickup_title}"/>
+        <parameter
+            android:name="taxiReservation.dropoffLocation.address"
+            android:key="dropoff_formatted_address" />
+        <parameter
+            android:name="taxiReservation.dropoffLocation.geo.latitude"
+            android:key="dropoff_latitude" />
+        <parameter
+            android:name="taxiReservation.dropoffLocation.geo.longitude"
+            android:key="dropoff_longitude" />
+        <parameter
+            android:name="taxiReservation.dropoffLocation.name"
+            android:key="dropoff_title" />
+        <parameter
+            android:name="taxiReservation.pickupLocation.address"
+            android:key="pickup_formatted_address" />
+        <parameter
+            android:name="taxiReservation.pickupLocation.geo.latitude"
+            android:key="pickup_latitude" />
+        <parameter
+            android:name="taxiReservation.pickupLocation.geo.longitude"
+            android:key="pickup_longitude" />
+        <parameter
+            android:name="taxiReservation.pickupLocation.name"
+            android:key="pickup_title" />
+    </capability>
+</shortcuts>
