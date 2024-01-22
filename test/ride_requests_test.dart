@@ -35,7 +35,8 @@ void main() {
     Ride? r = resToRide(null);
     expect(r, isNull);
     r = resToRide({});
-    expect(r, isNull);
+    expect(r?.pickupFormattedAddress, isNull);
+    expect(r?.dropoffFormattedAddress, isNull);
     r = resToRide({
       'pickup_formatted_address': "1 Main Street, Central, HK",
       'pickup_latitude': "1.223311",

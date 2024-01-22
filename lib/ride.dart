@@ -1,16 +1,16 @@
 import 'dart:ffi';
 
 class Ride {
-  final String pickupFormattedAddress;
-  final double pickupLatitude;
-  final double pickupLongitude;
-  final String pickupTitle;
-  final String dropoffFormattedAddress;
-  final double dropoffLatitude;
-  final double dropoffLongitude;
-  final String dropoffTitle;
+  final String? pickupFormattedAddress;
+  final double? pickupLatitude;
+  final double? pickupLongitude;
+  final String? pickupTitle;
+  final String? dropoffFormattedAddress;
+  final double? dropoffLatitude;
+  final double? dropoffLongitude;
+  final String? dropoffTitle;
 
-  Ride({required this.pickupFormattedAddress, required this.pickupLatitude, required this.pickupLongitude, required this.pickupTitle, required this.dropoffFormattedAddress, required this.dropoffLatitude, required this.dropoffLongitude, required this.dropoffTitle});
+  Ride({this.pickupFormattedAddress, this.pickupLatitude, this.pickupLongitude, this.pickupTitle, this.dropoffFormattedAddress, this.dropoffLatitude, this.dropoffLongitude, this.dropoffTitle});
 
   factory Ride.fromJson(Map<String, dynamic> json) {
     double? pickupLat = json['pickup_latitude'] is String? double.tryParse(json['pickup_latitude']):json['pickup_latitude'];
@@ -20,12 +20,12 @@ class Ride {
     double? dropoffLong = json['dropoff_longitude'] is String? double.tryParse(json['dropoff_longitude']):json['dropoff_longitude'];
     return Ride(
       pickupFormattedAddress: json['pickup_formatted_address'],
-      pickupLatitude: pickupLat?? 0,
-      pickupLongitude: pickupLong?? 0,
+      pickupLatitude: pickupLat,
+      pickupLongitude: pickupLong,
       pickupTitle: json['pickup_title'],
       dropoffFormattedAddress: json['dropoff_formatted_address'],
-      dropoffLatitude: dropoffLat?? 0,
-      dropoffLongitude: dropoffLong?? 0,
+      dropoffLatitude: dropoffLat,
+      dropoffLongitude: dropoffLong,
       dropoffTitle: json['dropoff_title'],
     );
   }
